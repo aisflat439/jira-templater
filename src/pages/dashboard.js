@@ -1,14 +1,20 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Router } from "@reach/router"
 
 import Layout from "../components/layout"
+import Profile from "../components/profile"
+import RouteBase from "../components/route-base"
+import RouteAdd from "../components/route-add"
+import RouteList from "../components/route-list"
 
 const Dashboard = () => (
   <Layout>
-    <h1>Dashboard</h1>
-    <Link to="/dashboard/">Go to dashboard</Link>
-    <br />
-    <Link to="/page-2/">Go to page 2</Link>
+    <Profile />
+    <Router>
+      <RouteBase path="/dashboard/base" />
+      <RouteList path="/dashboard/list" />
+      <RouteAdd path="/dashboard/add" />
+    </Router>
   </Layout>
 )
 

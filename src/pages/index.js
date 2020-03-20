@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import Link from "../components/Link"
 
 import Box from '@material-ui/core/Box'
 import Card from '@material-ui/core/Card'

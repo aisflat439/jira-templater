@@ -11,7 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
-
+import Link from "./Link"
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
@@ -43,7 +43,11 @@ const Layout = ({ children }) => {
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
-        <main>{children}</main>
+        <main>{children}
+          <Link to="/dashboard/">Go to dashboard</Link>
+          <br />
+          <Link to="/page-2/">Go to page 2</Link>
+        </main>
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
