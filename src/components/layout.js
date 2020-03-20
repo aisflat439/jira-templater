@@ -17,6 +17,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from '../theme';
 import { createMuiTheme } from '@material-ui/core/styles';
+import { IdentityContextProvider } from 'react-netlify-identity-widget'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -33,6 +34,7 @@ const Layout = ({ children }) => {
 
 
     <ThemeProvider theme={createMuiTheme(theme)}>
+      {/* <IdentityContextProvider url="yolo"> */}
       {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
       <CssBaseline />
       <Header siteTitle={data.site.siteMetadata.title} />
@@ -54,6 +56,7 @@ const Layout = ({ children }) => {
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
       </div>
+      {/* </IdentityContextProvider> */}
     </ThemeProvider>
 
   )

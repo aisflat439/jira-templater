@@ -3,7 +3,7 @@ import Typography from '@material-ui/core/Typography'
 
 const RouteBase = () => {
   return (
-    <Typography>Profile</Typography>
+    <Typography>Edit</Typography>
   )
 }
 
