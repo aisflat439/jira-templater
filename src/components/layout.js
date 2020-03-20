@@ -12,6 +12,12 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
 
+
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { ThemeProvider } from '@material-ui/core/styles';
+import theme from '../theme';
+import { createMuiTheme } from '@material-ui/core/styles';
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -24,12 +30,16 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+
+
+    <ThemeProvider theme={createMuiTheme(theme)}>
+      {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+      <CssBaseline />
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: 960,
+          maxWidth: 1600,
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
@@ -40,7 +50,8 @@ const Layout = ({ children }) => {
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
       </div>
-    </>
+    </ThemeProvider>
+
   )
 }
 

@@ -6,6 +6,10 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-top-layout',
+    {
+      resolve: 'gatsby-plugin-material-ui',
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
